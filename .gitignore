@@ -30,3 +30,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 *.code-workspace
+.vscode/*
+
+# commented files
+pages/sample_index.js
