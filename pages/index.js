@@ -1,6 +1,6 @@
 const Home = () => (
   <div>
-    <h1>Dr. EtoAl's Lab</h1>
+    <h1>EtoAl Spacetime Laboratory</h1>
     <p>Hey guys!</p>
   </div>
 )
