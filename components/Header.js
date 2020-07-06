@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import { css } from '@emotion/core'
+import Logo from './Logo'
 
 const Header = () => (
   <div>
-    <Link href="/">
-      <a>Home</a>
-    </Link>
+    <Logo />
     <Link href="/works">
       <a>Works</a>
     </Link>

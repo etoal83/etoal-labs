@@ -1,5 +1,5 @@
-import App, { Container } from 'next/app'
-import { Global, css, jsx } from '@emotion/core'
+import App from 'next/app'
+import { Global, css } from '@emotion/core'
 
 const globalStyles = css`
   * {
