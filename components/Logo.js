@@ -1,13 +1,16 @@
+/** @jsx jsx */
 import Link from 'next/link'
-import { css } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 
 const logoAreaStyle = css({
-  margin: '8px 20px',
+  padding: '8px 20px',
   zIndex: 2000,
 });
 
 const logoTextStyle = css({
-  color: 'red'
+  color: 'white',
+  fontSize: '2.0rem',
+  fontWeight: 'bold'
 });
 
 const Logo = () => (
