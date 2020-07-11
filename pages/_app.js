@@ -1,7 +1,9 @@
 import App from 'next/app'
 import { Global, css } from '@emotion/core'
+import emotionReset from 'emotion-reset'
 
 const globalStyles = css`
+  ${emotionReset}
   * {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   }
