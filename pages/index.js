@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { useRef } from 'react'
 import Header from '../components/Header'
+import { useRef, Suspense } from 'react'
 import { css, jsx } from '@emotion/core'
-import { Canvas, useFrame } from 'react-three-fiber'
+import * as THREE from 'three'
+import { Canvas, useFrame, useLoader } from 'react-three-fiber'
+// import earthTextureUrl from ''
 
 const fullWindowStyle = css({
   width: '100vw',
@@ -10,10 +12,12 @@ const fullWindowStyle = css({
   backgroundColor: '#222',
 });
 
-const Sample = () => {
+const Earth = () => {
   const ref = useRef();
+  const texture = useLoader(THREE.TextureLoader, '/textures/earthmap1k.jpg')
 
   useFrame(() => {
+    ref.current.rotation.y += 0.005
   });
 
   return (
@@ -27,19 +31,21 @@ const Sample = () => {
       <sphereGeometry attach='geometry' args={[300, 30, 30]} />
       <meshStandardMaterial
         attach='material'
-        color='hotpink'
+        map={texture}
       />
     </mesh>
   )
 }
 
-const Earth = () => (
-  <Canvas camera={{ position: [0, 0, 1000] }}>
+const EarthNow = () => (
+  <Canvas camera={{ position: [900, 0, 0] }}>
     <directionalLight
       position={[500, 500, 500]}
       intensity={0.8}
     />
-    <Sample />
+    <Suspense fallback={null}>
+      <Earth />
+    </Suspense>
   </Canvas>
 )
 
@@ -47,7 +53,7 @@ const Home = () => (
   <div>
     <Header />
     <div css={fullWindowStyle}>
-      <Earth />
+      <EarthNow />
     </div>
   </div>
 )
