@@ -5,7 +5,11 @@ import Logo from './Logo'
 import Nav from './Nav'
 
 const headerAreaStyle = css({
-  backgroundColor: 'black',
+  position: 'fixed',
+  display: 'flex',
+  alignItems: 'center',
+  backgroundColor: 'transparent',
+  zIndex: 2000,
 })
 
 const Header = () => (

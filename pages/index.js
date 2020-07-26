@@ -2,9 +2,10 @@
 import Header from '../components/Header'
 import { useRef, Suspense } from 'react'
 import { css, jsx } from '@emotion/core'
+import emotionReset from 'emotion-reset'
 import * as THREE from 'three'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber'
-// import earthTextureUrl from ''
+
 
 const fullWindowStyle = css({
   width: '100vw',
@@ -23,7 +24,7 @@ const Earth = () => {
   return (
     <mesh
       ref={ref}
-      onClick={e => console.log('click')}
+      onClick={e => console.log(emotionReset)}
       onPointerOver={e => console.log('hover')}
       onPointerOut={e => console.log('unhover')}
 

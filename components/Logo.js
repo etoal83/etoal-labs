@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { css, jsx } from '@emotion/core'
 
 const logoAreaStyle = css({
-  padding: '8px 20px',
+  padding: '1rem 1.2rem',
   zIndex: 2000,
 });
 
 const logoTextStyle = css({
-  color: 'white',
-  fontSize: '2.0rem',
+  color: '#ccc',
+  fontSize: '2.2rem',
   fontWeight: 'bold'
 });
 

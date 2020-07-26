@@ -8,6 +8,9 @@ const globalStyles = css`
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, Roboto, sans-serif;
     box-sizing: border-box;
   }
+  a {
+    cursor: pointer;
+  }
 `;
 
 function MyApp ({ Component, pageProps }) {
