@@ -8,9 +8,10 @@ const logoAreaStyle = css({
 });
 
 const logoTextStyle = css({
-  color: '#ccc',
+  color: '#fff',
   fontSize: '2.2rem',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  textShadow: '0 0 3px #ddd',
 });
 
 const Logo = () => (

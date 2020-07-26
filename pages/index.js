@@ -15,7 +15,7 @@ const fullWindowStyle = css({
 
 const Earth = () => {
   const ref = useRef();
-  const texture = useLoader(THREE.TextureLoader, '/textures/earthmap1k.jpg')
+  const texture = useLoader(THREE.TextureLoader, '/textures/2k_earth_daymap.jpg')
 
   useFrame(() => {
     ref.current.rotation.y += 0.005
