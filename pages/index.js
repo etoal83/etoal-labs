@@ -24,10 +24,6 @@ const Earth = () => {
   return (
     <mesh
       ref={ref}
-      onClick={e => console.log(emotionReset)}
-      onPointerOver={e => console.log('hover')}
-      onPointerOut={e => console.log('unhover')}
-
     >
       <sphereGeometry attach='geometry' args={[300, 30, 30]} />
       <meshStandardMaterial
