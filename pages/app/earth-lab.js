@@ -53,7 +53,7 @@ const CameraControls = () => {
 
 const EarthLab = () => (
   <FullWindowContainer>
-    <Canvas style={{ background: '#222' }}>
+    <Canvas camera={{ position: [900, 0, 0] }} style={{ background: '#222' }}>
       <CameraControls />
       <directionalLight position={[500, 500, 500]} intensity={0.8} />
       <Suspense fallback={null}>
