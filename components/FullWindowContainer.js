@@ -5,7 +5,6 @@ import emotionReset from 'emotion-reset';
 const fullWindowStyle = css({
   width: '100vw',
   height: '100vh',
-  backgroundColor: '#222',
 });
 
 const FullWindowContainer = ({ children }) => (
