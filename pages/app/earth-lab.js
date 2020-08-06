@@ -48,7 +48,14 @@ const CameraControls = () => {
     controls.current.update();
   });
 
-  return <orbitControls ref={controls} args={[camera, domElement]} />;
+  return (
+    <orbitControls
+      ref={controls}
+      args={[camera, domElement]}
+      maxDistance={1200}
+      minDistance={400}
+    />
+  );
 };
 
 const EarthLab = () => (
