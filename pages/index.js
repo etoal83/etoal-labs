@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import EarthLab from './app/earth-lab';
+import EarthLab from './labs/earth-lab';
 import { jsx } from '@emotion/core';
 
 const Home = () => (
