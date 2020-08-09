@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import Link from 'next/link'
-import { css, jsx } from '@emotion/core'
+import Link from 'next/link';
+import { css, jsx } from '@emotion/core';
 
 const logoAreaStyle = css({
   padding: '1rem 1.2rem',
@@ -20,6 +20,6 @@ const Logo = () => (
       <a css={logoTextStyle}>EtoAl.com</a>
     </Link>
   </div>
-)
+);
 
-export default Logo
+export default Logo;
