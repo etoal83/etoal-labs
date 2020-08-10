@@ -22,7 +22,7 @@ const Earth = () => {
   );
 
   useFrame(() => {
-    ref.current.rotation.y += 0.005;
+    ref.current.rotation.y += 0.001;
   });
 
   return (
