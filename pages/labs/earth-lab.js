@@ -1,5 +1,5 @@
 import { useRef, Suspense } from 'react';
-import * as THREE from 'three';
+import { TextureLoader, WebGLCubeRenderTarget } from 'three';
 import {
   Canvas,
   useFrame,
@@ -16,8 +16,8 @@ let OrbitControls;
 
 const Earth = () => {
   const ref = useRef();
-  const texture = useLoader(
-    THREE.TextureLoader,
+  const earthTexture = useLoader(
+    TextureLoader,
     '/textures/2k_earth_daymap.jpg'
   );
 
@@ -28,9 +28,23 @@ const Earth = () => {
   return (
     <mesh ref={ref}>
       <sphereGeometry attach="geometry" args={[300, 30, 30]} />
-      <meshStandardMaterial attach="material" map={texture} />
+      <meshStandardMaterial attach="material" map={earthTexture} />
     </mesh>
   );
+};
+
+const StarsBackground = () => {
+  const { gl, scene } = useThree();
+  const starsTexture = new TextureLoader().load(
+    '/textures/2k_stars_milky_way.jpg',
+    () => {
+      const renderTarget = new WebGLCubeRenderTarget(starsTexture.image.height);
+      renderTarget.fromEquirectangularTexture(gl, starsTexture);
+      scene.background = renderTarget;
+    }
+  );
+
+  return null;
 };
 
 const CameraControls = () => {
@@ -65,6 +79,7 @@ const EarthLab = () => (
       <directionalLight position={[500, 500, 500]} intensity={0.8} />
       <Suspense fallback={null}>
         <Earth />
+        <StarsBackground />
       </Suspense>
     </Canvas>
   </FullWindowContainer>
