@@ -68,6 +68,8 @@ const CameraControls = () => {
       args={[camera, domElement]}
       maxDistance={1200}
       minDistance={400}
+      enableDamping={true}
+      dampingFactor={0.15}
     />
   );
 };
