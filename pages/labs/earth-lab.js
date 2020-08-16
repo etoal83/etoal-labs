@@ -1,4 +1,4 @@
-import { useRef, Suspense } from 'react';
+import { useRef, Suspense, lazy } from 'react';
 import { TextureLoader, WebGLCubeRenderTarget } from 'three';
 import {
   Canvas,
@@ -78,7 +78,7 @@ const EarthLab = () => (
   <FullWindowContainer>
     <Canvas camera={{ position: [900, 0, 0] }} style={{ background: '#222' }}>
       <CameraControls />
-      <directionalLight position={[500, 500, 500]} intensity={0.8} />
+      <directionalLight position={[500, 500, 500]} intensity={0.9} />
       <Suspense fallback={null}>
         <Earth />
         <StarsBackground />
