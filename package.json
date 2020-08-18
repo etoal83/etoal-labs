@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "contentful": "^7.14.6",
     "emotion-reset": "^2.0.7",
     "next": "9.4.4",
     "react": "16.13.1",
