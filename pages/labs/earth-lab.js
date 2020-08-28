@@ -33,13 +33,15 @@ const Earth = () => {
   );
 };
 
-const StarsBackground = () => {
+const CelestialSphere = () => {
   const { gl, scene } = useThree();
-  const starsTexture = new TextureLoader().load(
+  const starBackgroundTexture = new TextureLoader().load(
     '/textures/2k_stars_milky_way.jpg',
     () => {
-      const renderTarget = new WebGLCubeRenderTarget(starsTexture.image.height);
-      renderTarget.fromEquirectangularTexture(gl, starsTexture);
+      const renderTarget = new WebGLCubeRenderTarget(
+        starBackgroundTexture.image.height
+      );
+      renderTarget.fromEquirectangularTexture(gl, starBackgroundTexture);
       scene.background = renderTarget;
     }
   );
@@ -81,7 +83,7 @@ const EarthLab = () => (
       <directionalLight position={[500, 500, 500]} intensity={0.9} />
       <Suspense fallback={null}>
         <Earth />
-        <StarsBackground />
+        <CelestialSphere />
       </Suspense>
     </Canvas>
   </FullWindowContainer>
