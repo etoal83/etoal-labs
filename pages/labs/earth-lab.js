@@ -8,6 +8,7 @@ import {
   extend,
 } from 'react-three-fiber';
 import FullWindowContainer from '../../components/FullWindowContainer';
+import CelestialSphere from '../../components/r3f/CelestialSphere';
 
 // これがうまく動かない理由がまだよく理解できていない
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -31,22 +32,6 @@ const Earth = () => {
       <meshStandardMaterial attach="material" map={earthTexture} />
     </mesh>
   );
-};
-
-const CelestialSphere = () => {
-  const { gl, scene } = useThree();
-  const starBackgroundTexture = new TextureLoader().load(
-    '/textures/2k_stars_milky_way.jpg',
-    () => {
-      const renderTarget = new WebGLCubeRenderTarget(
-        starBackgroundTexture.image.height
-      );
-      renderTarget.fromEquirectangularTexture(gl, starBackgroundTexture);
-      scene.background = renderTarget;
-    }
-  );
-
-  return null;
 };
 
 const CameraControls = () => {
