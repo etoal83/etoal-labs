@@ -1,6 +1,6 @@
 ---
 name: WOOP
-about: Verbalize your wish in this project
+about: Verbalize your wish to realize
 title: ''
 labels: ''
 assignees: etoal83
