@@ -1,26 +1,13 @@
 import { useRef, Suspense, lazy } from 'react';
-import { TextureLoader, WebGLCubeRenderTarget } from 'three';
-import {
-  Canvas,
-  useFrame,
-  useLoader,
-  useThree,
-  extend,
-} from 'react-three-fiber';
+import { Canvas, useFrame } from 'react-three-fiber';
+import { OrbitControls, useTextureLoader, Stats } from 'drei';
+
 import FullWindowContainer from '../../components/FullWindowContainer';
 import CelestialSphere from '../../components/r3f/CelestialSphere';
 
-// これがうまく動かない理由がまだよく理解できていない
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
-let OrbitControls;
-
 const Earth = () => {
   const ref = useRef();
-  const earthTexture = useLoader(
-    TextureLoader,
-    '/textures/2k_earth_daymap.jpg'
-  );
+  const earthTexture = useTextureLoader('/textures/2k_earth_daymap.jpg');
 
   useFrame(() => {
     ref.current.rotation.y += 0.001;
@@ -28,48 +15,27 @@ const Earth = () => {
 
   return (
     <mesh ref={ref}>
-      <sphereGeometry attach="geometry" args={[300, 30, 30]} />
+      <sphereGeometry attach="geometry" args={[300, 64, 64]} />
       <meshStandardMaterial attach="material" map={earthTexture} />
     </mesh>
-  );
-};
-
-const CameraControls = () => {
-  OrbitControls = require('three/examples/jsm/controls/OrbitControls')
-    .OrbitControls;
-  extend({ OrbitControls });
-
-  const {
-    camera,
-    gl: { domElement },
-  } = useThree();
-  const controls = useRef();
-
-  useFrame((state) => {
-    controls.current.update();
-  });
-
-  return (
-    <orbitControls
-      ref={controls}
-      args={[camera, domElement]}
-      maxDistance={1200}
-      minDistance={400}
-      enableDamping={true}
-      dampingFactor={0.15}
-    />
   );
 };
 
 const EarthLab = () => (
   <FullWindowContainer>
     <Canvas camera={{ position: [900, 0, 0] }} style={{ background: '#222' }}>
-      <CameraControls />
+      <OrbitControls
+        enableDamping={true}
+        dampingFactor={0.15}
+        maxDistance={1200}
+        minDistance={400}
+      />
       <directionalLight position={[500, 500, 500]} intensity={0.9} />
       <Suspense fallback={null}>
         <Earth />
         <CelestialSphere />
       </Suspense>
+      <Stats />
     </Canvas>
   </FullWindowContainer>
 );
