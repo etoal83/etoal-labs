@@ -35,7 +35,6 @@ const EarthLab = () => (
         <Earth />
         <CelestialSphere />
       </Suspense>
-      <Stats />
     </Canvas>
   </FullWindowContainer>
 );
