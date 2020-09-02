@@ -1,6 +1,11 @@
 import { useRef, Suspense, lazy } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
-import { OrbitControls, useTextureLoader, Stats } from 'drei';
+import {
+  PerspectiveCamera,
+  OrbitControls,
+  useTextureLoader,
+  Stats,
+} from 'drei';
 
 import FullWindowContainer from '../../components/FullWindowContainer';
 import CelestialSphere from '../../components/r3f/CelestialSphere';
@@ -23,11 +28,14 @@ const Earth = () => {
 
 const EarthLab = () => (
   <FullWindowContainer>
-    <Canvas camera={{ position: [900, 0, 0] }} style={{ background: '#222' }}>
+    <Canvas
+      style={{ background: '#222' }}
+      gl={{ logarithmicDepthBuffer: true }}
+    >
+      <PerspectiveCamera makeDefault position={[900, 0, 0]} />
       <OrbitControls
         enableDamping={true}
         dampingFactor={0.15}
-        maxDistance={1200}
         minDistance={400}
       />
       <directionalLight position={[500, 500, 500]} intensity={0.9} />
