@@ -11,17 +11,7 @@ import FullWindowContainer from '../../components/FullWindowContainer';
 import CelestialSphere from '../../components/r3f/CelestialSphere';
 import Planet from '../../components/r3f/Planet';
 
-const Earth = () => (
-  <Planet
-    physicalProps={{
-      equatorialRadius: 6378.1e3,
-      flattening: 0.003353,
-      siderealRotationPeriod: 23 * 3600 + 56 * 60 + 4.1,
-    }}
-    orbitalProps={{}}
-    texturePath={'/textures/2k_earth_daymap.jpg'}
-  />
-);
+const Earth = () => <Planet name={'earth'} />;
 
 const EarthLab = () => (
   <FullWindowContainer>
