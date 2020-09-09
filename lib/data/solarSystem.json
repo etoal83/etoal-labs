@@ -1,0 +1,14 @@
+{
+  "planet": {
+    "earth": {
+      "mass": 5.9724e24,
+      "meanDensity": 5.514,
+      "equatorialRadius": 6.3781366e6,
+      "flattening": 0.003353,
+      "siderealRotationPeriod": 86164.0905,
+      "semimajorAxis": 1.49598023e11,
+      "eccentricity": 0.01671022,
+      "texturePath": "/textures/2k_earth_daymap.jpg"
+    }
+  }
+}
