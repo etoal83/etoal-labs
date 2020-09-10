@@ -1,13 +1,43 @@
 {
   "planets": {
+    "mercury": {
+      "mass": 3.3011e23,
+      "meanDensity": 5.427e3,
+      "equatorialRadius": 2.4397e6,
+      "flattening": 0.0,
+      "siderealRotationPeriod": 5.06736e6,
+      "semimajorAxis": 5.791e10,
+      "eccentricity": 0.2056,
+      "texturePath": "/textures/2k_mercury.jpg"
+    },
+    "venus": {
+      "mass": 4.8675e24,
+      "meanDensity": 5.243e3,
+      "equatorialRadius": 6.0518e6,
+      "flattening": 0.0,
+      "siderealRotationPeriod": 2.099736e7,
+      "semimajorAxis": 5.791e10,
+      "eccentricity": 0.0067,
+      "texturePath": "/textures/2k_venus_atmosphere.jpg"
+    },
     "earth": {
       "mass": 5.9724e24,
-      "meanDensity": 5.514,
+      "meanDensity": 5.514e3,
       "equatorialRadius": 6.3781366e6,
       "flattening": 0.003353,
       "siderealRotationPeriod": 86164.0905,
       "semimajorAxis": 1.49598023e11,
       "eccentricity": 0.01671022,
+      "texturePath": "/textures/2k_earth_daymap.jpg"
+    },
+    "mars": {
+      "mass": 6.4171e24,
+      "meanDensity": 3.933e3,
+      "equatorialRadius": 3.3962e6,
+      "flattening": 0.00589,
+      "siderealRotationPeriod": 88642.44,
+      "semimajorAxis": 2.2792e11,
+      "eccentricity": 0.0935,
       "texturePath": "/textures/2k_earth_daymap.jpg"
     }
   }
