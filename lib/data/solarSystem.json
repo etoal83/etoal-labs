@@ -31,7 +31,7 @@
       "texturePath": "/textures/2k_earth_daymap.jpg"
     },
     "mars": {
-      "mass": 6.4171e24,
+      "mass": 6.4171e23,
       "meanDensity": 3.933e3,
       "equatorialRadius": 3.3962e6,
       "flattening": 0.00589,
@@ -39,6 +39,16 @@
       "semimajorAxis": 2.2792e11,
       "eccentricity": 0.0935,
       "texturePath": "/textures/2k_mars.jpg"
+    },
+    "jupiter": {
+      "mass": 1.89817e27,
+      "meanDensity": 1.326e3,
+      "equatorialRadius": 7.1492e7,
+      "flattening": 0.06487,
+      "siderealRotationPeriod": 35730.0,
+      "semimajorAxis": 7.7857e11,
+      "eccentricity": 0.0489,
+      "texturePath": "/textures/2k_jupiter.jpg"
     }
   }
 }
