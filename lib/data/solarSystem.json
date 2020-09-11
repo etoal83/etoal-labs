@@ -49,6 +49,36 @@
       "semimajorAxis": 7.7857e11,
       "eccentricity": 0.0489,
       "texturePath": "/textures/2k_jupiter.jpg"
+    },
+    "saturn": {
+      "mass": 5.6834e26,
+      "meanDensity": 6.87e2,
+      "equatorialRadius": 6.0268e7,
+      "flattening": 0.09796,
+      "siderealRotationPeriod": 38018.0,
+      "semimajorAxis": 1.43353e12,
+      "eccentricity": 0.0565,
+      "texturePath": "/textures/2k_saturn.jpg"
+    },
+    "uranus": {
+      "mass": 8.6813e25,
+      "meanDensity": 1.271e3,
+      "equatorialRadius": 2.5559e7,
+      "flattening": 0.02293,
+      "siderealRotationPeriod": 61784.0,
+      "semimajorAxis": 2.87246e12,
+      "eccentricity": 0.0457,
+      "texturePath": "/textures/2k_uranus.jpg"
+    },
+    "neptune": {
+      "mass": 1.02413e26,
+      "meanDensity": 1.638e3,
+      "equatorialRadius": 2.4764e7,
+      "flattening": 0.01708,
+      "siderealRotationPeriod": 57996.0,
+      "semimajorAxis": 4.49506e12,
+      "eccentricity": 0.0113,
+      "texturePath": "/textures/2k_neptune.jpg"
     }
   }
 }
