@@ -1,6 +1,6 @@
 ---
 name: Trouble shooting
-about:
+about: Report your error to fix it
 title: ''
 labels: ''
 assignees: etoal83
