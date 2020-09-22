@@ -15,12 +15,17 @@ const Planet = ({ name }) => {
   });
 
   return (
-    <mesh ref={ref} scale={[1.0, 1.0 - planet.flattening, 1.0]}>
+    <mesh
+      ref={ref}
+      scale={[1.0, 1.0 - planet.flattening, 1.0]}
+      castShadow
+      receiveShadow
+    >
       <sphereGeometry
         attach="geometry"
         args={[planet.equatorialRadius, 64, 64]}
       />
-      <meshStandardMaterial attach="material" map={texture} />
+      <meshLambertMaterial attach="material" map={texture} />
     </mesh>
   );
 };
