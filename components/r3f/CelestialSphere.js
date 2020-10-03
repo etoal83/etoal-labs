@@ -1,10 +1,11 @@
-import { TextureLoader, WebGLCubeRenderTarget } from 'three';
+import { WebGLCubeRenderTarget } from 'three';
 import { useThree } from 'react-three-fiber';
+import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader';
 
 const CelestialSphere = () => {
   const { gl, scene } = useThree();
-  const starBackgroundTexture = new TextureLoader().load(
-    '/textures/2k_stars_milky_way.jpg',
+  const starBackgroundTexture = new EXRLoader().load(
+    '/textures/starmap_2020_4k.exr',
     () => {
       const renderTarget = new WebGLCubeRenderTarget(
         starBackgroundTexture.image.height
