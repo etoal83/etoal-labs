@@ -21,6 +21,7 @@ const PlanetaryLab = ({ name }) => (
         far={3.0e16}
       />
       <OrbitControls
+        enablePan={false}
         enableDamping={true}
         dampingFactor={0.15}
         minDistance={1e7}
