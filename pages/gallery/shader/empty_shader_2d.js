@@ -10,14 +10,13 @@ const EmptyShaderCanvas = () => (
     <Canvas>
       <OrthographicCamera args={[-1, 1, 1, -1, 0, 1]} />
       <mesh>
-        <planeGeometry attach="geometry" args={[2, 2, 32, 32]} />
+        <planeGeometry attach="geometry" args={[2, 2, 10, 10]} />
         <shaderMaterial
           attach="material"
           args={[
             {
               vertexShader: emptyVertexShader,
               fragmentShader: emptyFragmentShader,
-              wireframe: true,
             },
           ]}
         />
