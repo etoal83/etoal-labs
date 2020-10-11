@@ -1,27 +1,32 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
+import { Vector2 } from 'three';
 import { Canvas, useFrame, useThree } from 'react-three-fiber';
-import { OrthographicCamera } from 'drei';
+import { PerspectiveCamera, OrthographicCamera } from '@react-three/drei';
 import FullWindowContainer from '../../../components/FullWindowContainer';
 
 import emptyVertexShader from './emptyVertexShader.glsl';
 import emptyFragmentShader from './emptyFragmentShader.glsl';
 
 const CustomShaderScreen = () => {
-  const ref = useRef();
-  const { aspect, clock } = useThree();
+  const material = useRef();
+  const { size, mouse } = useThree();
   const uniforms = {
-    uAspect: { value: aspect },
-    uTime: { value: 0.0 },
+    u_time: { value: 0.0 },
+    u_mouse: { value: mouse },
+    u_resolution: { value: [size.width, size.height] },
   };
 
-  useFrame(() => (ref.current.uniforms.uTime.value += 0.05));
+  useFrame(({ mouse }) => {
+    material.current.uniforms.u_time.value += 0.05;
+    material.current.uniforms.u_mouse.value = mouse;
+  });
 
   return (
     <mesh>
       <planeGeometry attach="geometry" args={[2, 2, 10, 10]} />
       <shaderMaterial
         attach="material"
-        ref={ref}
+        ref={material}
         uniforms={uniforms}
         vertexShader={emptyVertexShader}
         fragmentShader={emptyFragmentShader}
