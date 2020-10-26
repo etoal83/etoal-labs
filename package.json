@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -29,6 +29,8 @@
     "three": "^0.118.1"
   },
   "devDependencies": {
+    "@expo/next-adapter": "^2.1.41",
+    "babel-preset-expo": "^8.3.0",
     "prettier": "^2.0.5"
   }
 }
