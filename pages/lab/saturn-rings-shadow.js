@@ -86,6 +86,9 @@ const Light = () => {
   const light = new DirectionalLight(0xffffff, 1.0);
   light.position.set(5e9, 5e9, 5e9);
   light.castShadow = true;
+  light.shadow.bias = -0.0001;
+  light.shadow.mapSize.width = 8192;
+  light.shadow.mapSize.height = 8192;
   light.shadow.camera.left = -1e9;
   light.shadow.camera.right = 1e9;
   light.shadow.camera.top = 1e9;
@@ -97,7 +100,7 @@ const Light = () => {
 
 const Screen = () => {
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -6e7, 0]} receiveShadow>
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1e8, 0]} receiveShadow>
       <planeBufferGeometry attach="geometry" args={[1e9, 1e9]} />
       <meshStandardMaterial attach="material" color={'white'} />
     </mesh>

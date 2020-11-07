@@ -26,7 +26,6 @@ const NavItem = ({ label, url }) => (
 const Nav = () => (
   <div css={navAreaStyles}>
     <NavItem label="Labs" url="/labs" />
-    <NavItem label="Blog" url="/blog" />
   </div>
 );
 
