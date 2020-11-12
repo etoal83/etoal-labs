@@ -4,6 +4,8 @@ import {
   Vector3,
   RingGeometry,
   MeshLambertMaterial,
+  MeshDepthMaterial,
+  RGBADepthPacking,
   DirectionalLight,
   UniformsUtils,
   UniformsLib,
@@ -31,7 +33,7 @@ const Rings = () => {
   const nTheta = 128;
   const nPhi = 1;
 
-  let geometry = new RingGeometry(innerRadius, outerRadius, nTheta, nPhi);
+  const geometry = new RingGeometry(innerRadius, outerRadius, nTheta, nPhi);
   for (let yi = 0; yi < nPhi; yi++) {
     let u0 = yi / nPhi;
     let u1 = (yi + 1) / nPhi;
@@ -57,11 +59,18 @@ const Rings = () => {
     }
   }
 
+  const depthMap = new MeshDepthMaterial({
+    depthPacking: RGBADepthPacking,
+    map: texture,
+    alphaTest: 0.6,
+  });
+
   return (
     <mesh
       ref={ref}
       geometry={geometry}
       rotation={[-Math.PI / 2, 0, 0]}
+      customDepthMaterial={depthMap}
       castShadow
       receiveShadow
     >
@@ -75,18 +84,11 @@ const Rings = () => {
   );
 };
 
-const Ball = () => (
-  <mesh position={[0, 0, 3e8]} castShadow>
-    <sphereBufferGeometry attach="geometry" args={[3e7, 32, 32]} />
-    <meshStandardMaterial attach="material" color={'red'} />
-  </mesh>
-);
-
 const Light = () => {
   const light = new DirectionalLight(0xffffff, 1.0);
-  light.position.set(5e9, 5e9, 5e9);
+  light.position.set(5e9, 3e9, 5e9);
   light.castShadow = true;
-  light.shadow.bias = -0.0001;
+  light.shadow.bias = -0.001;
   light.shadow.mapSize.width = 8192;
   light.shadow.mapSize.height = 8192;
   light.shadow.camera.left = -1e9;
@@ -130,7 +132,6 @@ const SaturnRingsShadow = () => (
         <Screen />
         <Rings />
         <Saturn />
-        <Ball />
       </Suspense>
       <Stats />
     </Canvas>
