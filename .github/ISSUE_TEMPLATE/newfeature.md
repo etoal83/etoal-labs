@@ -1,13 +1,13 @@
 ---
 name: New feature
-about:
+about: Make ideas more concrete
 title: ''
 labels: ''
 assignees: etoal83
 ---
 
-# ⚡ Motivation
+## ⚡ Motivation
 
-# 🔮 Expected outcomes
+## 🔮 Expected outcomes
 
-# 📌 References
+## 📌 References
