@@ -6,17 +6,8 @@ labels: ''
 assignees: etoal83
 ---
 
-# 👾 Error report
+## 🛎 What's the matter?
 
-# 🔪 Breakdown
+## 👾 Error message
 
-- [ ] Next.js
-  - [ ] Server-side rendering (SSR)
-  - [ ] Dynamic routing
-- [ ] React
-- [ ] Three.js
-- [ ] react-three-fiber (R3F)
-
-# 📚 References
-
-# 🔬 Solution
+## 📝 Memo
