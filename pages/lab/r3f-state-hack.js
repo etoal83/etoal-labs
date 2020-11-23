@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 import { PerspectiveCamera, Html } from '@react-three/drei';
-import { ControlsProvider, Controls, useControl } from 'react-three-gui';
+import { Controls, useControl } from 'react-three-gui';
 
 const Ramiel = (props) => {
   const mesh = useRef();
@@ -69,8 +69,8 @@ const RamielGroup = () => {
 };
 
 const R3fStateHackingLab = () => (
-  <ControlsProvider>
-    <Canvas
+  <Controls.Provider>
+    <Controls.Canvas
       style={{
         background: '#333',
         width: '100vw',
@@ -80,9 +80,9 @@ const R3fStateHackingLab = () => (
       <ambientLight intensity={0.7} />
       <pointLight position={[10, 10, 10]} />
       <RamielGroup />
-    </Canvas>
+    </Controls.Canvas>
     <Controls title={'Control panel'} width={240} />
-  </ControlsProvider>
+  </Controls.Provider>
 );
 
 export default R3fStateHackingLab;
