@@ -10,6 +10,8 @@
   "dependencies": {
     "@contentful/rich-text-from-markdown": "^14.1.1",
     "@emotion/core": "^11.0.0",
+    "@emotion/native": "^11.0.0",
+    "@emotion/react": "^11.1.1",
     "@react-three/drei": "^2.2.7",
     "contentful": "^7.14.6",
     "drei": "^1.5.7",
