@@ -1,25 +1,15 @@
-import App from 'next/app'
-import { Global, css } from '@emotion/core'
-import emotionReset from 'emotion-reset'
+import * as React from 'react';
+import Head from 'next/head';
 
-const globalStyles = css`
-  ${emotionReset}
-  html {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, Roboto, sans-serif;
-    box-sizing: border-box;
-  }
-  a {
-    cursor: pointer;
-  }
-`;
-
-function MyApp ({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Global styles={globalStyles} />
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
