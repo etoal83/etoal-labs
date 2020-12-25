@@ -10,6 +10,8 @@
   "dependencies": {
     "@contentful/rich-text-from-markdown": "^14.1.1",
     "@emotion/core": "^11.0.0",
+    "@emotion/native": "^11.0.0",
+    "@emotion/react": "^11.1.1",
     "@react-three/drei": "^2.2.7",
     "contentful": "^7.14.6",
     "drei": "^1.5.7",
@@ -18,7 +20,7 @@
     "expo-three": "^5.5.1",
     "glslify-loader": "^2.0.0",
     "next": "10.0.1",
-    "next-transpile-modules": "^4.1.0",
+    "next-transpile-modules": "^6.0.0",
     "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@expo/next-adapter": "^2.1.45",
+    "babel-plugin-react-native-web": "^0.14.10",
     "babel-preset-expo": "^8.3.0",
     "prettier": "^2.1.2"
   }
